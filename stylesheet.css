@@ -1,5 +1,32 @@
-MainWindow {
-  width: 500px;
-  height: 100px;
+body {
+  background-color: #e8f0fc;
+}
+
+#MainWindow {
+  float: left;
+  width: 80%;
+  height: 200px;
   border: 1px solid #000;
+}
+
+#SideBar {
+  float: right;
+  width: 20%;
+}
+
+#SideBar {
+  font-family: "Courier New", Courier, monospace;
+  font-size: smaller;
+  background-color: #d5dbe3;
+  padding: 10px;
+}
+
+#One::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#Input {
+  width: fit-content;
 }
