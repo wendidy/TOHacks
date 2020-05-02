@@ -14,9 +14,11 @@ body {
   width: 20%;
 }
 
-#SideBar {
-  font-family: "Courier New", Courier, monospace;
+#SideBar p {
+  font-family: "Elise", "Preta", "Sunshine Daisies", Courier, monospace;
   font-size: smaller;
+  letter-spacing: 0.2em;
+  word-spacing: 0.5em;
   background-color: #d5dbe3;
   padding: 10px;
 }
@@ -27,6 +29,9 @@ body {
   clear: both;
 }
 
-#Input {
-  width: fit-content;
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  margin: 8px 0;
 }
