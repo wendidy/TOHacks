@@ -8,4 +8,7 @@ Plans for now:
   Using node.js to build a browser chat box app. (Which is kind of irrelevant to the theme for now)
   Web dev (Promote awareness of different diseases around the world)
   
+  Virtual chatting box, you will be able to see other people's virtual figures. 
+    For now we are only able to do it 2D, and nothing about setting user preferences.
+    In the future we can look more into it, and hopefully launch an app
   
