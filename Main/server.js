@@ -20,9 +20,10 @@ server.listen(5000, function() {
   console.log('Starting server on port 5000');
 });
 
-// Add the WebSocket handlers
+/* 
 io.on('connection', function(socket) {
 });
+*/
 
 /* Testing if server works
 setInterval(function() {
@@ -32,28 +33,35 @@ setInterval(function() {
 
 var players = {};
 io.on('connection', function(socket) {
-  socket.on('new player', function() {
-    players[socket.id] = {
-      x: 300,
-      y: 300,
-      name:    
-    };
-  });
-  socket.on('movement', function(data) {
-    var player = players[socket.id] || {};
-    if (data.left) {
-      player.x -= 5;
-    }
-    if (data.up) {
-      player.y -= 5;
-    }
-    if (data.right) {
-      player.x += 5;
-    }
-    if (data.down) {
-      player.y += 5;
-    }
-  });
+    socket.on('new player', function() {
+        players[socket.id] = {
+          x: 300,
+          y: 300,
+          text: "",
+        };
+    });
+    socket.on('movement', function(data) {
+        var player = players[socket.id] || {};
+        if (data.left) {
+          player.x -= 5;
+        }
+        if (data.up) {
+          player.y -= 5;
+        }
+        if (data.right) {
+          player.x += 5;
+        }
+        if (data.down) {
+          player.y += 5;
+        }
+    });
+
+    socket.on('msg', function(data) {
+        var player = players[socket.id] || {};
+        player.text = data;
+        player.text_time = 0;
+    });
+    
 });
 
 setInterval(function() {

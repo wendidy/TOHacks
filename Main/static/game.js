@@ -12,23 +12,31 @@ var movement = {
 var typing = false;
 var msg = '';
 
+// timer function
+var seconds = 0; 
+function timer() {
+    setInterval(function() {
+        seconds += 1;
+    }, 1000);
+}
+
 document.addEventListener('keydown', function(event) {
     var letter = event.keyCode;
-    if (typing) {
-        
-        if(letter == 10) { // send the msg
+    if (typing) {   
+        //console.log('if you see this, its working');
+        if(letter == 13) { // send the msg
             socket.emit('msg', msg);
             msg = '';
             typing = false;
-            break;
+            seconds = 0;
+            timer();
+        } else {
+            msg += String.fromCharCode(letter);
         }
-        
-        msg += even.keyCode;
-        break;
-    }
+    } else {
     
   switch (letter) {
-    case 10; // enter key is pressed
+      case 13: // enter key is pressed
         typing = true;
         break;
     case 65: // A
@@ -44,6 +52,7 @@ document.addEventListener('keydown', function(event) {
       movement.down = true;
       break;
   }
+}
 });
 document.addEventListener('keyup', function(event) {
   switch (event.keyCode) {
@@ -88,5 +97,9 @@ socket.on('state', function(players) {
     context.beginPath();
     context.arc(player.x, player.y, 10, 0, 2 * Math.PI);
     context.fill();
+    context.strokeText(player.text, player.x, player.y);
+      if(seconds > 5) {
+        socket.emit('msg', "");
+      }
   }
 });
