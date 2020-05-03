@@ -1,17 +1,33 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Covid Lounge</title>
-    <style>
-      canvas {
-        width: 800px;
-        height: 600px;
-        border: 5px solid black;
-      }
-    </style>
+    <link rel="stylesheet" href="stylesheet.css" />
     <script src="/socket.io/socket.io.js"></script>
+    <script src="/static/game.js"></script>
   </head>
   <body>
-    <canvas id="canvas"></canvas>
+    <section id="One">
+      <!-- World -->
+      <canvas id="canvas"></canvas>
+
+      <!-- Instructions on how to use the chat box -->
+      <aside id="SideBar">
+        <p>
+          Use '<strong>w</strong>', '<strong>a</strong>', '<strong>s</strong>',
+          '<strong>d</strong>' keys to move around in the world. <br />
+          <strong>Chat box</strong> is located at the bottom will enable you to
+          send text to the world.<br />
+          Enjoy!
+        </p>
+      </aside>
+    </section>
+    <br />
+    <!-- For input text -->
+    <form id="Input">
+      <input type="text" name="chat" placeholder="Enter what you want to say" />
+    </form>
   </body>
-  <script src="/static/game.js"></script>
 </html>
