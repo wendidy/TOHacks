@@ -1,14 +1,13 @@
-# TOHacks 2020
-# Theme:
-  "Using your individual experiences and background, tackle a social issue that you believe can be solved through technology. 
-  Furthermore, the ongoing COVID-19 pandemic has attracted global attention. 
-  How do you believe technology can be implemented into strategic solutions to benefit the post-COVID world?"
+# TOHacks 2020 - Covid Lounge
 
 Plans for now:
-  Using node.js to build a browser chat box app. (Which is kind of irrelevant to the theme for now)
-  Web dev (Promote awareness of different diseases around the world)
+  Using node.js to build a browser chat box app, for people to hang
   
-  Virtual chatting box, you will be able to see other people's virtual figures. 
+  Our platform creates a virtual world for people's digital figures to interact with each. 
+  They are able to walk around, and after pressing "Enter", then type in what they want to say, and press "Enter" again,
+  there will be a chat box floating on their head, which lasts a couple of seconds.
+  
+  We use Hamachi to host the server,
     For now we are only able to do it 2D, and nothing about setting user preferences.
     In the future we can look more into it, and hopefully launch an app
   
