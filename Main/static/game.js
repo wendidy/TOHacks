@@ -92,12 +92,13 @@ var context = canvas.getContext('2d');
 socket.on('state', function(players) {
   context.clearRect(0, 0, 800, 600);
   context.fillStyle = 'red';
+        
   for (var id in players) {
     var player = players[id];
     context.beginPath();
     context.arc(player.x, player.y, 10, 0, 2 * Math.PI);
     context.fill();
-    context.strokeText(player.text, player.x, player.y);
+    context.strokeText(player.text, player.x - 15, player.y - 20);
       if(seconds > 5) {
         socket.emit('msg', "");
       }
